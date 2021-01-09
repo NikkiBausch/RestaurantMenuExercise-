@@ -1,7 +1,9 @@
 public class generateNewItems {
-    //Instantiate new menu item objects
-    //Create addToMenu method
-    //new items to generate: "tomato soup", "vegetable soup", "conflict-free French onion soup" (description= no beef stock),
-    //garden salad, chocolate cake, carrot cake, strawberry shortcake cupcake, onion straws, spicy sauce (description = sriracha ketchup),
-
+   //This exists so I can implement the use of an interface at some point.
+    //for now, though I simplified it.
+    //In the future I want to make Menu an interface
+    //MenuItem will be an abstract class.
+    //And then I want this class for generating new items.
+    //Working towards having all items separated by type in their own classes (like in the Discs Repo)
+    //So that there's no overloading in each class.
 }

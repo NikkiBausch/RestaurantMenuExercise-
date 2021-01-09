@@ -1,33 +1,47 @@
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Menu {
 
-        private String appetizer;
-        private ArrayList mainCourse;
-        private String dessert;
-        private String sideDish;
+    private ArrayList<MenuItem> menuItems = new ArrayList<>();
+    private LocalDate lastUpdated;
 
-        public Menu (String appetizer, ArrayList mainCourse, String dessert, String sideDish){
-         this.appetizer = appetizer;
-         this.mainCourse = mainCourse;
-         this.dessert = dessert;
-         this.sideDish = sideDish;
-
-
+    public void addMenuItem(MenuItem menuItem) {
+        this.menuItems.add(menuItem);
+        this.lastUpdated = LocalDate.now();
 
     }
-    public String getAppetizer(){
-        return appetizer;
+
+    public void removeMenuItem(MenuItem menuItem) {
+        this.menuItems.remove(menuItem);
+        this.lastUpdated = LocalDate.now();
     }
-    public ArrayList getMainCourse(){
-            return mainCourse;
+
+    public LocalDate getLastUpdated() {
+        return lastUpdated;
     }
-    public String getDessert(){
-            return dessert;
-    }
-    public String getSideDish(){
-            return sideDish;
+
+
+    public String updateTheMenu() {
+        String menu = "";
+        for (MenuItem item : this.menuItems) {
+            if (item.IsNew()) {
+                menu += "*";
+            }
+            menu += item.toString() + "\n";
+        }
+        menu += "* indicates that this item is new. \n Last updated: " + this.lastUpdated;
+        return menu;
     }
 }
 
-//method replace old item in a dinner menu with new item?
+
+
+
+
+
+
+
+
+
